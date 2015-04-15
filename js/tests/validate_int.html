@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>QUnit basic example</title>
+  <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.18.0.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="http://code.jquery.com/qunit/qunit-1.18.0.js"></script>
+  <script type="text/javascript" src="../is_int.js"></script>
+  <script>
+    QUnit.test( "Is a string representation of an int still an int", function( assert ) {
+      var value = '2';
+
+      assert.equal( isInt(value), true, isInt(value) );
+
+    });
+    QUnit.test( "Test int validation", function( assert ) {
+      var value = 2;
+
+      assert.equal( isInt(value), true, isInt(value) );
+
+    });
+    QUnit.test("Does isInt return false when we expect it?", function(assert){
+        var value = 'b';
+        assert.equal(isInt(value), false, "should be false")
+    })
+  </script>
+</body>
+</html>
